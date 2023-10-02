@@ -1,0 +1,11 @@
+.nav-link:hover{
+    color: #0cd3d3;
+}
+.nav-link.active{
+    color: #2db5c7 !important; 
+    padding: 10px;
+    font-size: 1.4rem
+}
+a:active{
+    color: #2db5c7;
+}
