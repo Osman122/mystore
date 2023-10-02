@@ -3,9 +3,14 @@ import { axiosInstance } from "../apis/config";
 import { useEffect, useState } from 'react'
 import StarsBar from "../Components/starBar";
 import {Badge} from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { addToCart} from "../store/slice/cart";
+
+
 
 
 export default function ProductDetails() {
+    const dispatch = useDispatch()
     const params = useParams()
     const [ productData, setProductData ] = useState(null)
 
@@ -40,13 +45,14 @@ export default function ProductDetails() {
                     <h2 className={productData.discountPercentage? 'd-inline-block text-decoration-line-through':''} >$ {productData.price}</h2>
                     
                     {productData.discountPercentage?
-                    
-                        <><h2 className="fst-italic d-inline-block mt-2 ms-3">${((100 - productData.discountPercentage) * productData.price / 100).toFixed(1)}</h2>
-                        <span className="fst-italic ms-5" >{productData.discountPercentage}% off for a limited time!</span></>
+        
+                        <><h2 className="fst-italic d-inline-block mt-2 ms-3">${(( productData.price- productData.discountPercentage) * productData.price / 100).toFixed(1)}</h2>
+                         <h5 className="text-secondary"> {(productData.discountPercentage * productData.price / 100).toFixed()}$ discount</h5>
+                        </> 
                         :<></>}
                 </div>
                 <hr/>
-                <div className="mb-5">
+                <div className="mb-4">
                     <div className="d-flex justify-content-around align-items-center mb-5">
                         {productData.stock?<Badge bg="success">{productData.stock} Items In Stock</Badge>
                         :<Badge bg="danger">Out of Stock</Badge>}
@@ -55,7 +61,9 @@ export default function ProductDetails() {
                     <hr/>
                     <StarsBar rating={productData.rating}/>
                 </div>
-                <button style={{width:"80%"}} type="button" class="btn btn-info ">ADD TO CART</button>
+                <button style={{width:"80%"}} type="button" class="btn btn-info " 
+                onClick={(e)=>{dispatch(addToCart(productData))}}>
+                    ADD TO CART</button>
             </div>
             
         </div>

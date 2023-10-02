@@ -24,9 +24,8 @@ const ProductList = () => {
 
  
 
-  const redirectToDetails = (id) => {
-    navigate(`/game-details/${id}`);
-  };
+  
+  
 
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4" >

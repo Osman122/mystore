@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import StarsBar from "../Components/starBar";
+import { addToCart } from "../store/slice/cart";
+import { useDispatch } from "react-redux";
+
 
 export default function ProductCard (props) {
+    const dispatch=useDispatch()
     const navigate = useNavigate()
     const {product} = props
     const showProductDetails = (id) => {
@@ -23,9 +28,13 @@ export default function ProductCard (props) {
                     onClick={() => showProductDetails(product.id)}>{product.title}</h5>
                     <h5 className="d-inline float-end">${product.price}</h5>
                     <p className="card-text mt-2 text-dark p-1">{product.description}</p>
+                    
+                        <StarsBar rating={product.rating}  style= {{marginBottom:"2px"}}/>
+                    
+                    
                 </div>
                 
-                <button type="button" class="btn btn-info">ADD TO CART</button>
+                <button  type="button" class="btn btn-info" onClick={()=>{dispatch(addToCart(product))}}>ADD TO CART</button>
                 
             </div>
         </div>

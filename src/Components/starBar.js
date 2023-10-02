@@ -3,7 +3,8 @@ import { faStar as fullStar, faStarHalfStroke } from '@fortawesome/free-solid-sv
 import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons'
 
 export default function Stars (props) {
-    let {rating} = props
+    let {rating } = props
+    
 
 const stars = []
     for (let x=0; x < 5; x++){
@@ -18,5 +19,5 @@ const stars = []
         }
     }
 
-    return <div className="rating">{stars}</div>
+    return <div className="rating ">{stars}</div>
 }
