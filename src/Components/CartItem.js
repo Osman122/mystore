@@ -28,15 +28,15 @@ export default function CartItem (props) {
     }
     return <><tr>
             <td><div className="d-flex align-items-center">
-                <img className="w-25" src={product.thumbnail} alt="product"></img>
+                <img className="w-25" style={{width:"40px " ,height:"80px"}} src={product.thumbnail} alt="product"></img>
                 <div className='ps-5 rounded-3'>
-                    <h3 class="card-title pb-2">{product.title}</h3>
+                    <h4 class="card-title pb-2">{product.title}</h4>
                     <p class="card-text text-start">ID: {product.id}</p>
                 </div>
             </div></td>
-            <td><Button onClick={(event)=>handleClick(event)} variant="outline-secondary">-</Button>
+            <td><Button onClick={(event)=>handleClick(event)} variant="outline-dark">-</Button>
             <Badge className="w-25 h-25 p-2 m-2" bg="light" text="dark">{product.count}</Badge>
-            <Button onClick={(event)=>handleClick(event)} variant="outline-info">+</Button></td>
+            <Button onClick={(event)=>handleClick(event)} variant="outline-success">+</Button></td>
             <td><Button onClick={(event)=>handleClick(event)} variant="outline-danger">x</Button>{''}</td>
             <td>${product.price * product.count}</td>
         </tr></>
