@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmystore=self.webpackChunkmystore||[]).push([[614],{614:function(e,n,t){t.r(n),t.d(n,{default:function(){return i}});var r=t(184);function i(){return(0,r.jsx)("div",{id:"login",children:(0,r.jsx)("div",{class:"alert alert-secondary d-flex justify-content-between align-items-center",role:"alert",children:"log in her"})})}}}]);
+//# sourceMappingURL=614.80ae72a7.chunk.js.map

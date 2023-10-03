@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmystore=self.webpackChunkmystore||[]).push([[922],{8922:function(e,n,r){r.r(n),r.d(n,{default:function(){return s}});r(2791);var t=r(184);function s(){return(0,t.jsxs)("div",{className:"text-center my-5",children:[(0,t.jsx)("h1",{children:"404"}),(0,t.jsx)("h2",{children:"Sorry - We can't find your page "})]})}}}]);
+//# sourceMappingURL=922.cecaaa47.chunk.js.map
